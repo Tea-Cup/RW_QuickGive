@@ -16,9 +16,7 @@ namespace Foxy.QuickGive {
 		public static readonly string strWindowHeader = Translate("Foxy.QuickGive.WindowHeader", "Spawn Item");
 		public static readonly string strFavoritesHeader = Translate("Foxy.QuickGive.FavoritesHeader", "Favorites");
 
-		static Resources() {
-			Logger.Log("Resources loaded.");
-		}
+		static Resources() { }
 
 		private static string Translate(string key, string def) {
 			if (key.TryTranslate(out var str)) return str.ToStringSafe();

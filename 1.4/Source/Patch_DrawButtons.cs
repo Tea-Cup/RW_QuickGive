@@ -13,28 +13,24 @@ namespace Foxy.QuickGive {
 		private static readonly MethodInfo methodInjection = AccessTools.Method("Foxy.QuickGive.Patch_DrawButtons:Injection");
 
 		private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
-			Logger.Log("Injecting into Verse.DebugWindowsOpener:DrawButtons...");
 			if (methodWidgetRowInit == null) {
-				Logger.Warn("Method Verse.WidgetRow:Init not found");
+				Logger.Error("Method Verse.WidgetRow:Init not found");
 				return instructions;
 			}
-			Logger.Log("Method Verse.WidgetRow:Init found");
 			if (fieldWidgetRow == null) {
-				Logger.Warn("Field Verse.DebugWindowsOpener:widgetRow not found");
+				Logger.Error("Field Verse.DebugWindowsOpener:widgetRow not found");
 				return instructions;
 			}
-			Logger.Log("Field Verse.DebugWindowsOpener:widgetRow found");
 			if (methodInjection == null) {
-				Logger.Warn("Method Foxy.QuickGive.Patch_DrawButtons:Injection not found");
+				Logger.Error("Method Foxy.QuickGive.Patch_DrawButtons:Injection not found");
 				return instructions;
 			}
-			Logger.Log("Method Foxy.QuickGive.Patch_DrawButtons:Injection found");
 
 			var list = new List<CodeInstruction>(instructions);
 
 			int index = list.FindIndex(x => x.Calls(methodWidgetRowInit));
 			if (index < 0) {
-				Logger.Warn("Failed to find injection point.");
+				Logger.Error("Failed to find injection point.");
 				return instructions;
 			}
 
@@ -42,7 +38,6 @@ namespace Foxy.QuickGive {
 			list.Insert(++index, new CodeInstruction(OpCodes.Ldfld, fieldWidgetRow));
 			list.Insert(++index, new CodeInstruction(OpCodes.Call, methodInjection));
 
-			Logger.Log("Injection complete.");
 			return list;
 		}
 

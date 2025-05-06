@@ -5,20 +5,20 @@ Adds a Debug Mode button to quickly spawn a thing.
 
 # ![Features](https://i.postimg.cc/zBzB6kTG/h-Features.png)
 
-- Filter by defname and label
-- Spawn single item or a full stack
-- Minimize window to keep it out of the way
-- Put a star on an item to keep it easily accessible in a favorites panel
-- Hide favorites panel with a click on it's right side
-- Window position and state is remembered for each save-file
+- Filter by defname and label.
+- Spawn single item or a full stack.
+- Minimize window to keep it out of the way.
+- Put a star on an item to keep it easily accessible in a favorites panel.
+- Hide favorites panel with a click on it's right side.
+- Window position and state is remembered for each save-file.
 
 # ![How to use](https://i.postimg.cc/jqk53P2R/h-How-To-Use.png)
 
-- Enable debug mod
-- Click a hand icon
-- Click a thing from list
-- Left-click somewhere in a world
-- Right-click to disengage spawning
+- Enable debug mod.
+- Click a hand icon.
+- Click a thing from list.
+- Left-click somewhere in a world.
+- Right-click to disengage spawning.
 
 # ![Compatibility](https://i.postimg.cc/3NWwJJSM/h-Compatibility.png)
 
@@ -28,15 +28,15 @@ Adds a Debug Mode button to quickly spawn a thing.
 
 # ![Changelog](https://i.postimg.cc/k4T4mtyF/h-Changelog.png)
 
-#### 05.06.24
+#### 06.05.25
 
-- Initial upload.
+- Reduced mod size
+- Removed logs
 
 #### 02.07.24
 
 - Reinforced validity check to survive on a weird def.
 
-#### 06.05.25
+#### 05.06.24
 
-- Reduced mod size
-- Removed logs
+- Initial upload.
